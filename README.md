@@ -1,8 +1,15 @@
+# Version 1.0
+- Owner: BWV-vinh-tt
+
 # Init AWS services as code
 - EC2 - SG - EIP
-- SSM - Manage EC2 state
-- Init first time checkout develop branch & run docker-compose
+- SSM - Manage EC2 state (Start at 00:00 UTC / Stop at 12:00 PM UTC)
 - Terraform control AWS resources
+
+# Script process
+- Install environment node/php/git
+- Install mysql on Linux
+- Clone source & deploy via docker-compose up
 
 # Usage Init Infrastructure
 - Install https://developer.hashicorp.com/terraform/downloads?product_intent=terraform on your remote machine (mentor machine)
@@ -100,5 +107,15 @@
 | us-east-1  | Linux 2023    |  ami-08a52ddb321b32a8c| Empty
 | ap-southeast-1  | Linux 2023   |  ami-091a58610910a87a9 | Empty
 
-Demo:
+# Source code intern design
+![App flow](./images/App_Intern_Flow.png)
+
+
+# Demo
+
 https://drive.google.com/file/d/11GSkVc3J5VqL2-MTNzQZ2BamBW09Q0_V/view?usp=drive_link
+
+# Dependencies
+- Terraform v1.5.4
+- AWS Provider ~v3.27
+- Nodejs intern source: https://github.com/BWV-Dev/intern-nodejs-source

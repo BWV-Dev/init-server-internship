@@ -16,7 +16,7 @@ data "template_file" "mysql" {
 data "template_file" "env" {
   template = local.env
   vars = {
-    env = var.environment
+    env = "${var.environment}"
   }
 }
 
@@ -25,6 +25,10 @@ data "template_file" "source" {
   vars = {
     github_token = "${var.github_token}"
     git_url      = "${var.git_url}"
+    env = "${var.environment}"
+    user_name = "${var.mysql_user_name}"
+    password  = "${var.mysql_password}"
+    db_schema = "${var.mysql_db_schema}"
   }
 }
 
