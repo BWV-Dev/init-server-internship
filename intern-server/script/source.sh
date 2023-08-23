@@ -26,6 +26,8 @@ if [ "$ENV" = "node" ]; then
     echo "TYPEORM_USERNAME=$MYSQL_USER" >> env/development.env
     echo "TYPEORM_PASSWORD=$MYSQL_PASSWORD" >> env/development.env
     echo "TYPEORM_DATABASE=$DB_SCHEMA" >> env/development.env
+else 
+    sudo cp .env.example .env
 fi
 
 sudo docker-compose down -d
