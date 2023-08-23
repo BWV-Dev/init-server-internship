@@ -9,9 +9,7 @@ if [ "$ENV" == "node" ]; then
   sudo yum install -y nodejs
 else
     sudo dnf update -y
-    sudo dnf install -y httpd wget php-fpm php-mysqli php-json php php-devel
-    sudo systemctl start httpd
-    sudo systemctl enable httpd
+    sudo dnf install -y wget php-fpm php-mysqli php-json php php-devel
 fi
 
 # Install Docker
