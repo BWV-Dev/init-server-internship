@@ -2,10 +2,6 @@ variable "default_aws_region" {
   type    = string
   default = "ap-northeast-1"
 }
-variable "aws_profile" {
-  type = string
-}
-
 variable "key_pair_name" {
   type = string
 }

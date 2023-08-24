@@ -1,7 +1,3 @@
-variable "aws_profile" {
-  type = string
-}
-
 variable "key_pair_name" {
   type = string
 }

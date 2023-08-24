@@ -1,4 +1,10 @@
 terraform {
+  cloud {
+    organization = "bwv-vinh-tt"
+    workspaces {
+      name = "intern-infra"
+    }
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -10,26 +16,22 @@ terraform {
 
 # DEFAULT - NO CHANGE
 provider "aws" {
-  region  = var.default_aws_region
-  profile = var.aws_profile
+  region = var.default_aws_region
 }
 
 provider "aws" {
-  region  = "ap-northeast-1"
-  profile = var.aws_profile
-  alias   = "ap-northeast-1"
+  region = "ap-northeast-1"
+  alias  = "ap-northeast-1"
 }
 
 provider "aws" {
-  region  = "us-east-1"
-  profile = var.aws_profile
-  alias   = "us-east-1"
+  region = "us-east-1"
+  alias  = "us-east-1"
 }
 
 provider "aws" {
-  region  = "ap-southeast-1"
-  profile = var.aws_profile
-  alias   = "ap-southeast-1"
+  region = "ap-southeast-1"
+  alias  = "ap-southeast-1"
 }
 provider "random" {}
 # END provider

@@ -1,10 +1,15 @@
-# Version 1.0
+# Version 1.0 Cloud Mode
 - Owner: BWV-vinh-tt
+- Manage resources via Terraform Cloud. No need to use personal AWS access/secret key
+- Use cases:
+  + Many mentors control AWS services
+  + Avoid conflict if have many changes request
 
 # Init AWS services as code
 - EC2 - SG - EIP
 - SSM - Manage EC2 state (Start at 00:00 UTC / Stop at 12:00 PM UTC)
 - Terraform control AWS resources
+- Using Terraform CLOUD to manage resources state -> No need AWS access/secret key
 
 # Script process
 - Install environment node/php/git
@@ -13,7 +18,6 @@
 
 # Usage Init Infrastructure
 - Install https://developer.hashicorp.com/terraform/downloads?product_intent=terraform on your remote machine (mentor machine)
-- Configure your AWS information (aws configure)
 - Create key pairs SSH for each regions from AWS
 - Download this repo
 - Create one file terraform.tfvars (example below)
@@ -21,6 +25,7 @@
 - Define output format (optional)
 - Run command:
   ```
+    terraform login -> yes -> Ignore tab browser -> Paste this key: [...]
     terraform init
     terraform plan -> Optional but important this command help check validation
     terraform apply --auto-approve
@@ -49,7 +54,6 @@
 | Variables    | Description | Required | Example|
 | -------- | ------- |  ------- | ------- |
 | default_aws_region  | AWS region for your resources    |  •| ap-northeast-1|
-| aws_profile  | AWS profile you're using    |  •| default|
 | key_pair_name  | key pair SSH created from AWS    |  •| vinh-tt-personal|
 
 #  modules.tf example
@@ -68,7 +72,6 @@
 
       // DYNAMIC VARS
       ami_id            = "ami-04beabd6a4fb6ab6f" // Linux 2023, Ref AWS website
-      aws_profile       = "bwv-vinh-tt"
       key_pair_name     = "vinh-tt-personal"
       tag_name_instance = "intern-exam-001"
       mysql_user_name   = "admin"
@@ -82,7 +85,6 @@
 | Variables    | Description | Required | Example
 | -------- | ------- |  ------- | ------- |
 | aws_region  | AWS region for your resources    |  •| ap-northeast-1|
-| aws_profile | AWS profile you're using    |  • | default|
 | key_pair_name    |  Key SSH   |  • |vinh-tt-personal|
 | tag_name_instance    |  Tag name for instances   |  • |intern-vinh-tt|
 | mysql_user_name    |  MySQL username for database access   |  • |admin|
@@ -99,6 +101,7 @@
 # Note
 - Should rotate key-pair after one Internship season
 - Use only one key-pair for all instances is recommended
+- Terraform key, please contact me
 
 # List AMI
 | Region    | Description | AMI id | Resources
