@@ -1,5 +1,11 @@
-# Version 1.0
+# Version 1.0 Remote Local
 - Owner: BWV-vinh-tt
+- Manage resources via Terraform Cloud. Using your personal AWS access/secret key with specific Policy
+- Use cases:
+  + Have no share resources control between developers
+  + One developer manages one resource-group
+
+### *If have many developers control many resources. Please checkout branch feature/cloud for more information.
 
 # Init AWS services as code
 - EC2 - SG - EIP
