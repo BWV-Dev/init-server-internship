@@ -20,7 +20,6 @@
 - Install https://developer.hashicorp.com/terraform/downloads?product_intent=terraform on your remote machine (mentor machine)
 - Create key pairs SSH for each regions from AWS
 - Download this repo
-- Create one file terraform.tfvars (example below)
 - Define all instances in modules.tf (example below)
 - Define output format (optional)
 - Run command:
@@ -49,12 +48,6 @@
     Confirm: 'Yes'
   ```
 
-# terraform.tfvars example
-
-| Variables    | Description | Required | Example|
-| -------- | ------- |  ------- | ------- |
-| default_aws_region  | AWS region for your resources    |  •| ap-northeast-1|
-| key_pair_name  | key pair SSH created from AWS    |  •| vinh-tt-personal|
 
 #  modules.tf example
 ```javascript
