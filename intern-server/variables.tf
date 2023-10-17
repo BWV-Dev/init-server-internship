@@ -55,6 +55,10 @@ variable "github_token" {
 
 variable "git_url" {
   type = string
+  validation {
+    condition = length(regexall("(http://|https://|http|https)", var.git_url)) == 0
+    error_message = "The URL must not contain 'http://' or 'https://'."
+  }
 }
 
 variable "environment" {

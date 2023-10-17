@@ -4,6 +4,7 @@ variable "default_aws_region" {
 }
 variable "key_pair_name" {
   type = string
+  default = "example_defauflt_value"
 }
 
 # ================================
