@@ -9,6 +9,9 @@ sudo yum update -y
 # this command installs MySQL server on your machine, it also creates a systemd service
 sudo wget https://dev.mysql.com/get/mysql80-community-release-el9-1.noarch.rpm
 sudo dnf install mysql80-community-release-el9-1.noarch.rpm -y
+# setting GPG-key
+rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2023
+
 sudo dnf install mysql-community-server -y
 
 # this command enables the service created in previous step
